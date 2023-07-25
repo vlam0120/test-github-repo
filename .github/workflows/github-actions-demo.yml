@@ -35,7 +35,7 @@ jobs:
             scan-url: 'https://api.metadefender.com/v4/file'
             folder: ${{ github.workspace }}/files-to-scan
             log-file: ${{ github.workspace }}/log.txt
-            apikey: ${{ secrets.APIKey }}
+            apikey: ${{ secrets.MD_CLOUD_APIKEY }}
             fail-build: 1
         
         - name: check current folder again
