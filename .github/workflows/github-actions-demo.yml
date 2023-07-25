@@ -11,7 +11,7 @@ jobs:
 
       steps:
         - name: checkout
-          uses: actions/checkout@v2
+          uses: actions/checkout@v3.5.3
           with:
             path: files-to-scan
         - name: check current folder
