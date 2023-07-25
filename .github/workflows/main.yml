@@ -41,5 +41,3 @@ jobs:
             fail-build: 1
             github-token: ${{ secrets.GH_TOKEN }}
         
-        - name: check current folder again
-          run: ls .
