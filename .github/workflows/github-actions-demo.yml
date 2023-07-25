@@ -17,13 +17,13 @@ jobs:
           uses: actions/setup-node@v1
           with:
             node-version: 16
+            
+        - name: check current folder
+          run: ls .
         
         - name: npm install
           run: npm install
         
-        - name: check current folder
-          run: ls .
-
         - name: Hello world action step
           id: hello
           uses: vlam0120/metadefender-github-action@v17
