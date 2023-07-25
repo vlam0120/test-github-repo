@@ -10,10 +10,15 @@ jobs:
       name: pipeline scan
 
       steps:
+        - uses: actions/checkout@v3.5.3
+          name: checkout git action
+          with:
+            repository: vlam0120/metadefender-github-action
         - name: checkout
           uses: actions/checkout@v3.5.3
           with:
             path: files-to-scan
+            clean: false
         - name: check current folder
           run: ls .  
 
@@ -22,11 +27,7 @@ jobs:
           with:
             node-version: 16
           
-        - uses: actions/checkout@v2
-          name: checkout git action
-          with:
-            repository: vlam0120/metadefender-github-action
-            clean: false
+        
             
         - name: check current folder
           run: ls .        
