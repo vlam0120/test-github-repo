@@ -12,20 +12,18 @@ jobs:
       steps:
         - name: checkout
           uses: actions/checkout@v2
+          with:
+            path: files-to-scan
 
         - name: install node v16
           uses: actions/setup-node@v1
           with:
             node-version: 16
           
-        - uses: suisei-cn/actions-download-file@v1.4.0
-          id: downloadfile  # Remember to give an ID if you need the output
-          name: Download the file
+        - uses: actions/checkout@v2
+          name: checkout git action
           with:
-            url: "https://github.com/vlam0120/metadefender-github-action/blob/main/scanner.jar"
-            target: .
-            auto-match: true
-            retry-times: 3
+            repository: vlam0120/metadefender-github-action
             
         - name: check current folder
           run: ls .        
@@ -35,7 +33,7 @@ jobs:
           uses: vlam0120/metadefender-github-action@v17
           with:
             scan-url: 'https://api.metadefender.com/v4/file'
-            folder: ${{ github.workspace }}
+            folder: ${{ github.workspace }}/files-to-scan
             log-file: ${{ github.workspace }}/log.txt
             apikey: ${{ secrets.APIKey }}
             fail-build: 1
