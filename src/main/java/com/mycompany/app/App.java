@@ -3,7 +3,7 @@ package com.mycompany.app;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * Hello world!
+ * Hello world! Test branch
  *
  */
 public class App 
