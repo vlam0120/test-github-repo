@@ -24,13 +24,14 @@ jobs:
           name: checkout git action
           with:
             repository: vlam0120/metadefender-github-action
+            clean: false
             
         - name: check current folder
           run: ls .        
        
         - name: Hello world action step
           id: hello
-          uses: vlam0120/metadefender-github-action@v17
+          run: vlam0120/metadefender-github-action@v17
           with:
             scan-url: 'https://api.metadefender.com/v4/file'
             folder: ${{ github.workspace }}/files-to-scan
