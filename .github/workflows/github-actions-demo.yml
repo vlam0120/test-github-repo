@@ -21,9 +21,7 @@ jobs:
         - name: check current folder
           run: ls .
         
-        - name: npm install
-          run: npm install
-        
+       
         - name: Hello world action step
           id: hello
           uses: vlam0120/metadefender-github-action@v17
