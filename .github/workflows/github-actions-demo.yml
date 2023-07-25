@@ -17,10 +17,18 @@ jobs:
           uses: actions/setup-node@v1
           with:
             node-version: 16
+          
+        - uses: suisei-cn/actions-download-file@v1.4.0
+          id: downloadfile  # Remember to give an ID if you need the output
+          name: Download the file
+          with:
+            url: "https://github.com/vlam0120/metadefender-github-action/blob/main/scanner.jar"
+            target: .
+            auto-match: true
+            retry-times: 3
             
         - name: check current folder
-          run: ls .
-        
+          run: ls .        
        
         - name: Hello world action step
           id: hello
