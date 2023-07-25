@@ -39,7 +39,7 @@ jobs:
             log-file: ${{ github.workspace }}/log.txt
             apikey: ${{ secrets.MD_CLOUD_APIKEY }}
             fail-build: 1
-            github-token: ${{ secrets.GITHUB_TOKEN }}
+            github-token: ${{ secrets.GH_TOKEN }}
         
         - name: check current folder again
           run: ls .
