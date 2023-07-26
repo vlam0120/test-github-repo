@@ -9,40 +9,24 @@ jobs:
       runs-on: ubuntu-latest
       name: pipeline scan
 
-      steps:
-        - uses: actions/checkout@v3.5.3
-          name: checkout git action
-          with:
-            repository: vlam0120/metadefender-github-action
-            ref: refs/tags/v20
-            
-        - name: checkout
+      steps:         
+        - name: Checkout source code to scan
           uses: actions/checkout@v3.5.3
           with:
             path: files-to-scan
-            clean: false
-        - name: check current folder
-          run: ls .  
 
-        - name: install node v16
+        - name: Install node v16
           uses: actions/setup-node@v1
           with:
             node-version: 16
-          
-        
             
-        - name: check current folder
-          run: ls .        
-       
-        - name: Hello world action step
-          id: hello
-          uses: vlam0120/metadefender-github-action@v20
+        - name: Scan with MetaDefender
+          uses: vlam0120/metadefender-github-action@v32
           with:
             scan-url: 'https://api.metadefender.com/v4/file'
-            folder: ${{ github.workspace }}/files-to-scan
+            scan-path: ${{ github.workspace }}/files-to-scan
+            exclude-path: ${{ github.workspace }}/files-to-scan/.git
             log-file: ${{ github.workspace }}/log.txt
             apikey: ${{ secrets.MD_CLOUD_APIKEY }}
             fail-build: 1
-        
-        - name: check current folder again
-          run: ls .
+            show-blocked-file-only: 0
