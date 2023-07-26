@@ -24,7 +24,7 @@ jobs:
           run: curl -o scanner.jar https://github.com/vlam0120/metadefender-github-action/releases/download/v26/scanner.jar
         
         - name: check current folder
-          run: ls .        
+          run: ls -l .        
        
         - name: Scan with MetaDefender
           id: hello
