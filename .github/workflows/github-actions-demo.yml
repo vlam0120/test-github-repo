@@ -21,7 +21,6 @@ jobs:
             node-version: 16
             
         - name: Scan with MetaDefender
-          id: hello
           uses: vlam0120/metadefender-github-action@v32
           with:
             scan-url: 'https://api.metadefender.com/v4/file'
