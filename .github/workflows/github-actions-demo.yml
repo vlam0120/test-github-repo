@@ -22,7 +22,7 @@ jobs:
             
         - name: Scan with MetaDefender
           id: hello
-          uses: vlam0120/metadefender-github-action@v29
+          uses: vlam0120/metadefender-github-action@v30
           with:
             scan-url: 'https://api.metadefender.com/v4/file'
             folder: ${{ github.workspace }}/files-to-scan
