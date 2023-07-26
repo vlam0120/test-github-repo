@@ -39,6 +39,6 @@ jobs:
             log-file: ${{ github.workspace }}/log.txt
             apikey: ${{ secrets.MD_CLOUD_APIKEY }}
             fail-build: 1
-            show-blocked-file-only: 0
+            show-blocked-file-only: 1
             github-token: ${{ secrets.GH_TOKEN }}
         
