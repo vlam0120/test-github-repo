@@ -22,10 +22,11 @@ jobs:
             
         - name: Scan with MetaDefender
           id: hello
-          uses: vlam0120/metadefender-github-action@v31
+          uses: vlam0120/metadefender-github-action@v32
           with:
             scan-url: 'https://api.metadefender.com/v4/file'
-            folder: ${{ github.workspace }}/files-to-scan
+            scan-path: ${{ github.workspace }}/files-to-scan
             log-file: ${{ github.workspace }}/log.txt
             apikey: ${{ secrets.MD_CLOUD_APIKEY }}
             fail-build: 1
+            show-blocked-file-only: 0
