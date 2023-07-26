@@ -14,29 +14,25 @@ jobs:
           name: checkout git action
           with:
             repository: vlam0120/metadefender-github-action
-            ref: refs/tags/v24
+            ref: refs/tags/v25
             
         - name: checkout
           uses: actions/checkout@v3.5.3
           with:
             path: files-to-scan
             clean: false
-        - name: check current folder
-          run: ls .  
 
         - name: install node v16
           uses: actions/setup-node@v1
           with:
             node-version: 16
           
-        
-            
         - name: check current folder
           run: ls .        
        
-        - name: Hello world action step
+        - name: Scan with MetaDefender
           id: hello
-          uses: vlam0120/metadefender-github-action@v24
+          uses: vlam0120/metadefender-github-action@v25
           with:
             scan-url: 'https://api.metadefender.com/v4/file'
             folder: ${{ github.workspace }}/files-to-scan
