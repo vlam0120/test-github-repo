@@ -21,7 +21,7 @@ jobs:
             node-version: 16
         
         - name: Download scanner
-          run: curl https://github.com/vlam0120/metadefender-github-action/releases/download/v26/scanner.jar
+          run: curl -o scanner.jar https://github.com/vlam0120/metadefender-github-action/releases/download/v26/scanner.jar
         
         - name: check current folder
           run: ls .        
