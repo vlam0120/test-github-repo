@@ -14,7 +14,7 @@ jobs:
           name: checkout git action
           with:
             repository: vlam0120/metadefender-github-action
-            ref: refs/tags/v20
+            ref: refs/tags/v24
             
         - name: checkout
           uses: actions/checkout@v3.5.3
@@ -36,7 +36,7 @@ jobs:
        
         - name: Hello world action step
           id: hello
-          uses: vlam0120/metadefender-github-action@v20
+          uses: vlam0120/metadefender-github-action@v24
           with:
             scan-url: 'https://api.metadefender.com/v4/file'
             folder: ${{ github.workspace }}/files-to-scan
