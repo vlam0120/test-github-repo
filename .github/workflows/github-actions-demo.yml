@@ -19,16 +19,10 @@ jobs:
           uses: actions/setup-node@v1
           with:
             node-version: 16
-        
-        - name: Download scanner
-          run: curl -o scanner.jar https://github.com/vlam0120/metadefender-github-action/releases/download/v26/scanner.jar
-        
-        - name: check current folder
-          run: ls -l .        
-       
+            
         - name: Scan with MetaDefender
           id: hello
-          uses: vlam0120/metadefender-github-action@v26
+          uses: vlam0120/metadefender-github-action@v27
           with:
             scan-url: 'https://api.metadefender.com/v4/file'
             folder: ${{ github.workspace }}/files-to-scan
