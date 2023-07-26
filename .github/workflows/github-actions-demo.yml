@@ -15,6 +15,7 @@ jobs:
           with:
             repository: vlam0120/metadefender-github-action
             ref: refs/tags/v26
+            path: ./
             
         - name: checkout
           uses: actions/checkout@v3.5.3
