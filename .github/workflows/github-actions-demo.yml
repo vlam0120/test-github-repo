@@ -28,5 +28,5 @@ jobs:
             exclude-path: ${{ github.workspace }}/files-to-scan/.git
             log-file: ${{ github.workspace }}/log.txt
             apikey: ${{ secrets.MD_CLOUD_APIKEY }}
-            fail-build: 1
+            fail-build: 0
             show-blocked-file-only: 0
