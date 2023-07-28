@@ -16,10 +16,7 @@ jobs:
             path: files-to-scan
             
         - name: Download MetaDefender scanner
-          run: 'curl -LO https://github.com/vlam0120/metadefender-github-action/releases/download/v26/scanner.jar'
-          
-        - name: List folder
-          run: 'ls -l .'  
+          run: 'curl -LO https://github.com/vlam0120/metadefender-github-action/releases/download/v26/scanner.jar'  
           
         - name: Install node v16
           uses: actions/setup-node@v1
