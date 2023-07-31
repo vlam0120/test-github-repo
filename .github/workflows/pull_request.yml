@@ -1,29 +1,30 @@
-name: Change on Master
-on: 
-  push:
+name: GitHub Actions Demo Pull Request
+on:
+  pull_request:
     branches: [main]
 
 jobs:
 
   pipeline_scan:
       runs-on: ubuntu-latest
-      name: Change on Master
+      name: pull request scan
 
       steps:         
         - name: Checkout source code to scan
           uses: actions/checkout@v3.5.3
           with:
             path: files-to-scan
-            
-        - name: Download MetaDefender scanner
-          run: 'curl -LO https://github.com/vlam0120/metadefender-github-action/releases/download/v26/scanner.jar'  
-          
+
         - name: Install node v16
           uses: actions/setup-node@v1
           with:
             node-version: 16
-            
+        
+        - name: Download MetaDefender scanner
+          run: 'curl -LO https://github.com/vlam0120/metadefender-github-action/releases/download/v26/scanner.jar'  
+                   
         - name: Scan with MetaDefender
+          id: hello
           uses: vlam0120/metadefender-github-action@v40
           with:
             scan-url: 'https://api.metadefender.com/v4/file'
@@ -33,3 +34,4 @@ jobs:
             apikey: ${{ secrets.MD_CLOUD_APIKEY }}
             fail-build: 1
             show-blocked-file-only: 0
+        
