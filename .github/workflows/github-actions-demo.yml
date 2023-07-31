@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: Change on Master
 on: 
   push:
     branches: [main]
@@ -7,7 +7,7 @@ jobs:
 
   pipeline_scan:
       runs-on: ubuntu-latest
-      name: pipeline scan
+      name: Change on Master
 
       steps:         
         - name: Checkout source code to scan
